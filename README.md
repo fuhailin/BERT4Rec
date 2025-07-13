@@ -5,11 +5,23 @@
 
 **Requirements**
 
-* python 2.7+
-* Tensorflow 1.12 (GPU version)
-* CUDA compatible with TF 1.12
+* python 3
+* Tensorflow 1.15 (GPU version)
+* CUDA compatible with TF 1.15
 
 **Run**
+Run with Docker:
+```
+docker run --gpus all -it \
+    --rm \
+    --network=host \
+    --name="TF115_deeprec" \
+    --privileged \
+    --cap-add=SYS_PTRACE \
+    --shm-size=1g \
+    --ulimit memlock=-1 \
+    alideeprec/deeprec-release:deeprec2402-gpu-py38-cu116-ubuntu20.04
+```
 
 For simplicity, here we take ml-1m as an example:
 
